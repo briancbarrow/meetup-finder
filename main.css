@@ -1,36 +1,9 @@
-main{
-  margin: auto;
-  text-align: center;
-  color: #19BC3D;  
-  font-family: 'Nunito', sans-serif;
+html, body {
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
 }
-
-.quote-cont {
-  color: #007C1B;
-  min-height: 50px;
-  width: 600px;
-  margin: auto;
-  border: solid 1px black;
-  margin-bottom: 20px;
-  background-color: #D9F7E0;
-  border-radius: 15px;
-  padding: 5px 5px;
-  text-align: center;
-}
-
-.quote {
-  font-size: 20px;
-  min-height: 50px;
-  max-width: 500px;
-  margin: auto;
-  margin-bottom: 15px;
-}
-
-.author {
-  font-size: 17px;
-  font-style: italic;
-}
-
-button{
-  color: #007C1B;
+#map {
+  height: 100%;
 }
