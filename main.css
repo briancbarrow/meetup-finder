@@ -8,7 +8,7 @@ html, body {
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  background-color: #1481BA;
+  background-color: #FAFFF9;
 }
 #map {
   height: 100%;
@@ -17,24 +17,55 @@ html, body {
 
 main {
   margin-bottom: 15px;
-  color: #F0F3BD;
-  font-family: 'Crimson Text', serif;
+  color: #006032;
+  font-family: 'Francois One', sans-serif;
+}
+
+.header {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.hint {
+  display: inline;
+  font-size: 15px;
 }
 
 input{
   background-color: #F6F4F3;
   padding-left: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #32936F;
+  background-color: #FAFFF9;
+  font-size: 20px;
+  margin: 5px;
+}
+
+input:focus, button:focus {
+  outline: none;
 }
 
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #616163;
+  color: #AFBFAC;
 }
 input::-moz-placeholder { /* Firefox 19+ */
-  color: #616163;
+  color: #AFBFAC;
 }
 input:-ms-input-placeholder { /* IE 10+ */
-  color: #616163;
+  color: #AFBFAC;
 }
 input:-moz-placeholder { /* Firefox 18- */
-  color: #616163;
+  color: #AFBFAC;
+}
+
+button {
+  display: block;
+  margin: 5px auto 15px auto;  
+  font-size: 20px;
+  border-radius: 9px;
+  background-color: #32936F;
+  height: 35px;
+  color: #303328;
 }

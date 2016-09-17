@@ -1,14 +1,14 @@
+
+// $('#example').tooltip(options)
+
 $(document).ready(function(){
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
   var search = function(userInput, location) {
-    var searchValue = 'javascript';
-    var locationVal = '';
-    if(userInput){
-      searchValue = userInput;
-    }   
-    if(location){      
-      locationVal = location;
-      console.log(locationVal)
-    }
+    var searchValue = userInput || 'javascript';
+    var locationVal = location || '';
+ 
     $.ajax({
       url: 'https://api.meetup.com/find/groups',
       data: {
@@ -54,7 +54,7 @@ $(document).ready(function(){
       }
       })
        
-   for(var i in meetups){
+   for (var i in meetups) {
     var marker = new google.maps.Marker({
         position: {lat: meetups[i].lat, lng: meetups[i].lon},
         map: map,
@@ -63,8 +63,8 @@ $(document).ready(function(){
       }
     );
       marker.info = new google.maps.InfoWindow({
-        content: '<h3>' + meetups[i].name + '</h3>' +
-        '<p>' + meetups[i].description + '</p>' +
+        content: '<h3 style="font-family: Play, sans-serif">' + meetups[i].name + '</h3>' +
+        '<p style="font-family: Play, sans-serif">' + meetups[i].description + '</p>' +
         '<div><a href="' + meetups[i].link + '">' + meetups[i].link + '</div>'
       });
       google.maps.event.addListener(marker, 'click', function() {
@@ -74,12 +74,12 @@ $(document).ready(function(){
      };
     }
 
-  $('form').submit(function(){
+  $('form').submit(function(event) {
+    event.preventDefault();
     console.log('Submitted')
     var input = $('#search-term').val();
     var location = $('#location').val();
     search(input, location);
-    return false;
   });
   search();
 });
