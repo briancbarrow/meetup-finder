@@ -53,29 +53,35 @@ $(document).ready(function(){
         console.log('Error reason: ' + status);
       }
       })
-       
-   for (var i in meetups) {
-    var marker = new google.maps.Marker({
-        position: {lat: meetups[i].lat, lng: meetups[i].lon},
-        map: map,
-        title: meetups[i].name,
-        clickable: true
-      }
-    );
-      marker.info = new google.maps.InfoWindow({
-        content: '<h3 style="font-family: Play, sans-serif">' + meetups[i].name + '</h3>' +
-        '<p style="font-family: Play, sans-serif">' + meetups[i].description + '</p>' +
-        '<div><a href="' + meetups[i].link + '">' + meetups[i].link + '</div>'
-      });
-      google.maps.event.addListener(marker, 'click', function() {
-        var marker_map = this.getMap();
-        this.info.open(map, this);
-      });
-     };
+      var infowindow = new google.maps.InfoWindow();
+      for (var i in meetups) {
+        var marker = new google.maps.Marker({
+            position: {lat: meetups[i].lat, lng: meetups[i].lon},
+            map: map,
+            title: meetups[i].name,
+            clickable: true,
+            info: ''
+          }
+        );
+        marker.info = '<div style="font-family: Play, sans-serif"><h3 style="font-family: Play, sans-serif">' + meetups[i].name + '</h3>' +
+          '<p style="font-family: Play, sans-serif">' + meetups[i].description + '</p>' +
+          '<div><a href="' + meetups[i].link + '">' + meetups[i].link + '</div></div>';
+        google.maps.event.addListener(marker, 'click', function() {
+          var marker_map = this.getMap();
+          infowindow.setContent(this.info)
+          infowindow.open(map, this);
+        });        
+        $('#content').append(
+            '<div class="meetup"><h3>' + meetups[i].name + '</h3>' +
+            '<p>' + meetups[i].description + '</p>' +
+            '<div><a href="' + meetups[i].link + '">' + meetups[i].link + '</div></div>'
+          );
+      };
     }
 
   $('form').submit(function(event) {
     event.preventDefault();
+    $('#content').html('<h1 class="content">List of Meetups</h1>');
     console.log('Submitted')
     var input = $('#search-term').val();
     var location = $('#location').val();
