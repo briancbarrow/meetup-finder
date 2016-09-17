@@ -69,3 +69,18 @@ button {
   height: 35px;
   color: #303328;
 }
+
+.meetup {
+  border: solid 1px #006032;
+  text-align: left;
+  margin: 10px auto;
+  padding: 0 10px 10px 10px;
+  font-family: 'Play', sans-serif;
+}
+
+.content {
+  font-family: 'Francois One', sans-serif;
+  color: #006032;
+  text-align: left;
+  margin-top: 35px;
+}
