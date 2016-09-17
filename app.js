@@ -1,4 +1,10 @@
+
+// $('#example').tooltip(options)
+
 $(document).ready(function(){
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
   var search = function(userInput, location) {
     var searchValue = userInput || 'javascript';
     var locationVal = location || '';
@@ -57,8 +63,8 @@ $(document).ready(function(){
       }
     );
       marker.info = new google.maps.InfoWindow({
-        content: '<h3>' + meetups[i].name + '</h3>' +
-        '<p>' + meetups[i].description + '</p>' +
+        content: '<h3 style="font-family: Play, sans-serif">' + meetups[i].name + '</h3>' +
+        '<p style="font-family: Play, sans-serif">' + meetups[i].description + '</p>' +
         '<div><a href="' + meetups[i].link + '">' + meetups[i].link + '</div>'
       });
       google.maps.event.addListener(marker, 'click', function() {
