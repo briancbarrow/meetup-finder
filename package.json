@@ -1,0 +1,36 @@
+{
+  "name": "meetup-finder",
+  "version": "1.0.0",
+  "description": "Meetup Finder\r ======",
+  "main": "app.js",
+  "scripts": {
+    "mkdir": "mkdir build",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css",
+    "watch": "npm run watch:html & npm run watch:css",
+    "clean": "rm -rf build",
+    "build:html": "npm run clean:html && cp index.html build/",
+    "clean:html": "rm -f build/index.html",
+    "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
+    "build:css": "npm run clean:css && lessc --source-map styles/main.less build/$npm_package_name.$npm_package_version.css",
+    "clean:css": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map",
+    "watch:css": "npm run build:css && chokidar 'styles/**/*.less' -c 'npm run build:css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briancbarrow/meetup-finder.git"
+  },
+  "author": "Brian Barrow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/briancbarrow/meetup-finder/issues"
+  },
+  "homepage": "https://github.com/briancbarrow/meetup-finder#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "less": "^2.7.1"
+  }
+}
