@@ -1,9 +1,9 @@
-var $ = require('jquery');
-var initMap = require('./map.js');
+const $ = require('jquery');
+const initMap = require('./map.js');
 
 var search = function(userInput, location) {
-    var searchValue = userInput || 'javascript';
-    var locationVal = location || '';
+    let searchValue = userInput || 'javascript';
+    let locationVal = location || '';
  
     $.ajax({
       url: 'https://api.meetup.com/find/groups',
