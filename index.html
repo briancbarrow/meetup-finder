@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Meetup Finder"/>
+    <meta property="og:description" content="Find Local Meetup Groups"/>
+    <meta property="og:image" content="https://68.media.tumblr.com/59aef8b4419807e5c2a5728befd0aa41/tumblr_oexph4Om7H1v23hsyo1_500.png">
+    <meta property="og:image:width" content="1187" />
+    <meta property="og:image:height" content="682" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Meetup Finder"/>
+    <meta name="twitter:description" content="Find Local Meetup Groups"/>
+    <!-- <meta name="twitter:site" content="@the_BrianB"/> -->
+    <meta name="twitter:image" content="https://68.media.tumblr.com/59aef8b4419807e5c2a5728befd0aa41/tumblr_oexph4Om7H1v23hsyo1_500.png"/>
+    <!-- <meta name="twitter:creator" content="@the_BrianB"/> -->
+    <title>Meetup Finder Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link href="meetup-finder.min.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtiEtpRWLNkFjOgBb1Ykttg49FiqL6ie4"
-    async defer></script>  
-    <script src='meetup-finder.1.0.0.js'></script> 
+    async defer></script>
+    <script src='meetup-finder.1.0.0.js'></script>
   </head>
-  <body>   
-    <main> 
-      <h1 class="header">Find a Local Meetup Group</h1>      
+  <body>
+    <main>
+      <h1 class="header">Find a Local Meetup Group</h1>
       <form id="search">
         <input id="search-term" type="text" placeholder="Meetup Topic" data-toggle="tooltip" data-placement="left" title="Eg: Tennis, Fishing, Golf, Pokémon, etc.">
         <input id="location" type="text" placeholder="City" data-toggle="tooltip" data-placement="right" title="Eg: Los Angeles, New York, Salt Lake City, Seattle, etc.">
         <button type="submit" form="search" class="search" value="Search">Search</button>
       </form>
     </main>
-    <div id="map"></div> 
+    <div id="map"></div>
     <div id="content">
       <h1 class="content">List of Meetups</h1>
-    </div>  
+    </div>
   </body>
 </html>
